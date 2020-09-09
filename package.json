@@ -186,5 +186,9 @@
       "prettier-stylelint --write",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuhongda/snowpack-template-react-typescript.git"
   }
 }
