@@ -10,8 +10,23 @@
     "baseUrl": "./",
     /* more strict checking for errors that per-file transpilers like `esbuild` would crash */
     "isolatedModules": true,
-    "paths": { "*": ["web_modules/.types/*"] }
+    "paths": { "*": ["web_modules/.types/*"], "@/*": ["./src/*"], },
     // Feel free to add/edit new config options below:
-    // ...
+    "outDir": "./built",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es6"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "esModuleInterop": true,
   }
 }

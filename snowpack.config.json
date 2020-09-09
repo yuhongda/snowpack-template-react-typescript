@@ -1,4 +1,21 @@
 {
   "extends": "@snowpack/app-scripts-react",
-  "plugins": []
+  "plugins": [
+    [
+      "@snowpack/plugin-babel",
+      {
+        "input": [".js", ".mjs", ".jsx", ".ts", ".tsx"], 
+        "transformOptions": {
+        }
+      }
+    ]
+  ],
+  "exclude": ["**/node_modules/**/*", "**/__tests__/*", "**/*.@(spec|test).@(js|mjs)"],
+  "alias": {
+    "@": "./src/"
+  },
+  "installOptions": {
+    "polyfillNode": true,
+    "namedExports": ["mobx-react-router"]
+  }
 }
