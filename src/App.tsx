@@ -10,10 +10,10 @@ const StyledLink = styled.a`
 `;
 
 interface IAppProps extends IProps {
-  history: any
+  history?: any;
 }
 
-function App({store, history}: IAppProps) {
+function App({ store, history }: IAppProps) {
   return (
     <Provider store={store}>
       <Router history={history}>
