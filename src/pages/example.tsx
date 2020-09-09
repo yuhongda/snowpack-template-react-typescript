@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { observer, inject } from 'mobx-react';
 import { useLocalStore, useObserver } from 'mobx-react-lite';
 import styled from 'styled-components';
+import { Button } from 'antd';
 
 const StyledLink = styled.a`
   color: #01439c;
@@ -27,6 +28,7 @@ const Example: React.FC<IProps> = (props) => {
         Hello Snowpack!!
         {localStore.getText}
       </StyledLink>
+      <Button>Test</Button>
     </div>
   ));
 };

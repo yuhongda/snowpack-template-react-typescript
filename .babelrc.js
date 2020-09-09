@@ -12,15 +12,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      'import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: '',
-        style: false,
-      },
-      'antd',
-    ],
     '@babel/plugin-proposal-json-strings',
     [
       '@babel/plugin-proposal-decorators',
