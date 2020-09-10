@@ -4,7 +4,9 @@ import { useLocalStore, useObserver } from 'mobx-react-lite';
 import styled from 'styled-components';
 import { Button } from 'antd';
 import './example.css';
-import logo from './logo.svg';
+import styles from './test.module.scss';
+import stylesLess from './testLess.module.less';
+import logo from '../logo.svg';
 
 const StyledLink = styled.a`
   color: #01439c;
@@ -30,9 +32,10 @@ const Example: React.FC<IProps> = (props) => {
         <img src={logo} className="example-logo" alt="logo" />
         <StyledLink className="example-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Hello Snowpack!!
-          {localStore.getText}
         </StyledLink>
-        <Button>Test</Button>
+        <div className={stylesLess.blue}>{localStore.getText}</div>
+        <div className={styles.red}>{localStore.getText}</div>
+        <Button type="primary">antd test</Button>
       </div>
     </div>
   ));

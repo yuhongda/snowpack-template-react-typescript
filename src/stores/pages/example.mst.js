@@ -15,7 +15,9 @@ const ExampleStore = types
     return {};
   })
   .actions((self) => ({
-    afterCreate() {},
+    afterCreate() {
+      self.text = 'text from store';
+    },
     setText(value) {
       self.text = value;
     },
