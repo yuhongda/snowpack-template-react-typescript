@@ -18,7 +18,7 @@
     "cookies": "^0.8.0",
     "cors": "^2.8.5",
     "echarts": "^4.5.0-rc.1",
-    "echarts-for-react": "^2.0.15-beta.0",
+    "echarts-for-react": "^2.0.16",
     "es6-promise": "^4.1.0",
     "es6-weak-map": "^2.0.2",
     "express": "^4.17.1",
