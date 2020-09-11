@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { observer, inject } from 'mobx-react';
 import { useLocalStore, useObserver } from 'mobx-react-lite';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import styles from './test.module.scss';
 import stylesLess from './testLess.module.less';
 import logo from '../logo.svg';
 import ReactEcharts from 'echarts-for-react';
+import { useDrag, useDrop } from 'react-dnd';
 
 const StyledLink = styled.a`
   color: #01439c;
@@ -32,6 +33,15 @@ const Example: React.FC<IProps> = (props) => {
     props
   );
 
+  const ref = useRef(null);
+  const [{ isDragging }, drag] = useDrag({
+    item: { type: 'test' },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+  drag(ref);
+
   return useObserver(() => (
     <div className="example">
       <div className="example-inner">
@@ -41,7 +51,14 @@ const Example: React.FC<IProps> = (props) => {
         </StyledLink>
         <div className={stylesLess.blue}>{localStore.getText}</div>
         <div className={styles.red}>{example.text}</div>
-        <Button type="primary">antd test</Button>
+        <p>
+          <Button type="primary">antd test</Button>
+        </p>
+        <p>
+          <Button type="primary" ref={ref}>
+            drag me
+          </Button>
+        </p>
         <ChartContainer>
           <ReactEcharts
             option={{
