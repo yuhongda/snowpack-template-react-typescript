@@ -4,10 +4,8 @@ import { Provider } from 'mobx-react';
 import { Router } from 'react-router-dom';
 import styled from 'styled-components';
 import Routes from '@/router';
-
-const StyledLink = styled.a`
-  color: #01439c;
-`;
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend/dist/esm/index.js';
 
 interface IAppProps extends IProps {
   history?: any;
@@ -16,9 +14,11 @@ interface IAppProps extends IProps {
 function App({ store, history }: IAppProps) {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        <Routes />
-      </Router>
+      <DndProvider backend={HTML5Backend}>
+        <Router history={history}>
+          <Routes />
+        </Router>
+      </DndProvider>
     </Provider>
   );
 }

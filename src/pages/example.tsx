@@ -37,10 +37,10 @@ const Example: React.FC<IProps> = (props) => {
       <div className="example-inner">
         <img src={logo} className="example-logo" alt="logo" />
         <StyledLink className="example-link" href="https://www.snowpack.dev" target="_blank" rel="noopener noreferrer">
-          Hello Snowpack!!
+          Hello Snowpack!!!
         </StyledLink>
         <div className={stylesLess.blue}>{localStore.getText}</div>
-        <div className={styles.red}>{localStore.getText}</div>
+        <div className={styles.red}>{example.text}</div>
         <Button type="primary">antd test</Button>
         <ChartContainer>
           <ReactEcharts
@@ -58,6 +58,9 @@ const Example: React.FC<IProps> = (props) => {
                   type: 'line',
                 },
               ],
+              textStyle: {
+                color: '#fff',
+              },
             }}
             notMerge={true}
             opts={{ renderer: 'svg' }}
